@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Number</title><style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3e8ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        background: white;
+        padding: 30px;
+        width: 320px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+
+    h2 {
+        color: #6b21a8;
+    }
+
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button {
+        width: 95%;
+        padding: 12px;
+        margin-top: 10px;
+        background: #7e22ce;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #6b21a8;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #581c87;
+    }
+</style>
+
+</head><body><div class="container">
+    <h2>Find the Largest Number</h2>
+
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <input type="number" id="num3" placeholder="Enter third number">
+
+    <button onclick="findLargest()">Find Largest</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function findLargest() {
+        let num1 = Number(document.getElementById("num1").value);
+        let num2 = Number(document.getElementById("num2").value);
+        let num3 = Number(document.getElementById("num3").value);
+
+        let largest;
+
+        if (num1 >= num2 && num1 >= num3) {
+            largest = num1;
+        }
+        else if (num2 >= num1 && num2 >= num3) {
+            largest = num2;
+        }
+        else {
+            largest = num3;
+        }
+
+        document.getElementById("result").innerHTML =
+            largest + " is largest";
+    }
+</script>
+
+</body>
+</html>
